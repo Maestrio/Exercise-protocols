@@ -1,5 +1,6 @@
 package com.example.exerciseprotocols.ui.screens
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -19,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.exerciseprotocols.viewmodel.*
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ProtocolListScreen(viewModel: ListViewModel, onAdd: () -> Unit, onOpen: (Long) -> Unit, onEdit: (Long) -> Unit) {
     val items by viewModel.protocols.collectAsStateWithLifecycle()
